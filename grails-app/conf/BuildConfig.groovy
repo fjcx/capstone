@@ -51,7 +51,6 @@ grails.project.dependency.resolution = {
         mavenRepo "http://repository.jboss.com/maven2/"      
         mavenRepo "http://repo.desirableobjects.co.uk/"  
         mavenRepo "https://raw.github.com/fernandezpablo85/scribe-java/mvn-repo"        
-
     }
 
     dependencies {
@@ -59,6 +58,7 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.27'
         // runtime 'org.postgresql:postgresql:9.3-1100-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0-grails-2.3"
+	compile "org.postgresql:postgresql:9.4-1201-jdbc4"
     }
 
     plugins {
