@@ -104,6 +104,14 @@ function downloadExperiment(fileformat) {
 
 
 function init() {
+    // if the server says we're not logged in, send them to the login page
+    $(document).ajaxSuccess(function(event, xhr, settings) {
+        if (('responseJSON' in xhr)
+                && (xhr.responseJSON['error'] == 'User not logged in')) {
+            window.location.reload();
+        }
+    });
+
     // init the experiment object
     experiment = new ExperimentModel();
     experiment.fromJson(IMPORT_DATA_JSON);
